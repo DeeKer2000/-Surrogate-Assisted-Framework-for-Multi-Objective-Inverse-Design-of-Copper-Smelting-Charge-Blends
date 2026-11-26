@@ -1,0 +1,46 @@
+# ---------- 数据：仓库只放代码，不放数据集 ----------
+data/
+*.csv
+*.xlsx
+*.xls
+
+# ---------- 模型权重 / 训练产物 ----------
+*.ckpt
+*.pt
+*.pth
+*.tabpfn_fit
+*.safetensors
+models/
+weights/
+*.joblib
+*.pkl
+
+# ---------- 实验结果 ----------
+experiments/
+outputs/
+results/
+
+# ---------- 论文与文档产物 ----------
+*.docx
+*.pdf
+*.pptx
+文章/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---------- IDE / 系统 ----------
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+~$*
+
+# ---------- 本地环境变量（放 TABPFN_TOKEN）----------
+.env
+.env.*

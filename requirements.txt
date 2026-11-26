@@ -1,0 +1,31 @@
+# 铜熔炼配矿代理模型 — Python 依赖
+# 环境基准：Python 3.12 + CUDA 11.8（本项目实测版本，见行尾注释）
+#
+# 安装：
+#   pip install -r requirements.txt
+# 若要用 GPU，先按官方说明装对应 CUDA 版本的 torch：
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu118
+
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.3
+
+# 代理模型核心
+tabpfn>=8.0.8            # 实测 8.0.8；含 save_fitted_tabpfn_model / load_fitted_tabpfn_model
+torch>=2.3               # 实测 2.7.1+cu118
+
+# SHAP 解释（step4 / step5 / scripts/analysis/shap_analysis.py）
+shap>=0.45               # 实测 0.52.0
+# tabpfn-extensions 提供 shapiq 解释器。PyPI 版本可能锁死较老的 tabpfn，
+# 若 pip 解析失败，请从 https://github.com/PriorLabs/tabpfn-extensions 源码安装：
+#   git clone https://github.com/PriorLabs/tabpfn-extensions
+#   pip install -e tabpfn-extensions
+tabpfn-extensions>=0.4.2  # 实测 0.4.2
+
+# 多目标优化（配矿 NSGA-II）
+pymoo>=0.6.1             # 实测 0.6.1.6
+
+# 读取 Excel 版矿源/人工配矿数据
+openpyxl>=3.1
